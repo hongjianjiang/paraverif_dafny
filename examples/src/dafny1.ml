@@ -1752,7 +1752,7 @@ source ~/.bashrc
     cmd_lemmas
   ))
   ("End=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`")
-  ("val=`expr $Start - $End`")
+  ("val=`expr $End - $Start`")
   ("printf \"%s %.2f sec\\n\" 运行时间为： $val") in 
   let filename = sprintf "%s/run.sh" name in
   Out_channel.write_all filename sh_str;

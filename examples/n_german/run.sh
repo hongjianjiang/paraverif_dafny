@@ -55,6 +55,6 @@ dafny n_german_lemma_oninv__50.dfy
 dafny n_german_lemma_oninv__51.dfy
 dafny n_german_lemma_oninv__52.dfy
 End=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
-val=`expr $Start - $End`
+val=`expr $End - $Start`
 printf "%s %.2f sec\n" 运行时间为： $val
 

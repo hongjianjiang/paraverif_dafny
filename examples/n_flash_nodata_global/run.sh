@@ -167,5 +167,5 @@ dafny n_flash_nodata_global_lemma_oninv__162.dfy
 dafny n_flash_nodata_global_lemma_oninv__163.dfy
 dafny n_flash_nodata_global_lemma_oninv__164.dfy
 End=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
-val=`expr $Start - $End`
+val=`expr $End - $Start`
 printf "%s %.2f sec\n" 运行时间为： $val
