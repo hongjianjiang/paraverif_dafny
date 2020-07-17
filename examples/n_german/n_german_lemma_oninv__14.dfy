@@ -33,7 +33,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && (CurCmd[0] == ReqE)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -68,7 +68,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && (CurCmd[0] == ReqE)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -101,9 +101,9 @@ requires forall i,j::0<=i<InvSet.Length&&0<=j<InvSet.Length==>InvSet[i]!=InvSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && (CurCmd[0] == ReqE)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -141,7 +141,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && ((CurCmd[0] == ReqS) && (ExGntd[0] == true))) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -178,7 +178,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && ((CurCmd[0] == ReqS) && (ExGntd[0] == true))) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -213,9 +213,9 @@ requires forall i,j::0<=i<InvSet.Length&&0<=j<InvSet.Length==>InvSet[i]!=InvSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires ((Chan2_Cmd[i] == Empty) && (InvSet[i] == true) && ((CurCmd[0] == ReqS) && (ExGntd[0] == true))) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies InvSet
 
@@ -253,7 +253,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires ((Chan2_Cmd[i] == Inv) && (Chan3_Cmd[i] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -297,7 +297,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires ((Chan2_Cmd[i] == Inv) && (Chan3_Cmd[i] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -339,9 +339,9 @@ requires forall i,j::0<=i<Chan3_Data.Length&&0<=j<Chan3_Data.Length==>Chan3_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires ((Chan2_Cmd[i] == Inv) && (Chan3_Cmd[i] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -392,7 +392,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqS) && (CurPtr[0] == i) && (ExGntd[0] == false)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -440,7 +440,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqS) && (CurPtr[0] == i) && (ExGntd[0] == false)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -486,9 +486,9 @@ requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqS) && (CurPtr[0] == i) && (ExGntd[0] == false)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -541,9 +541,9 @@ requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
-requires (!((ExGntd[0] == false) && (Chan2_Cmd[p__Inv0] == GntE)))//3
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (ShrSet[p__Inv0] == false)))//3
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqE) && (CurPtr[0] == i) && (ExGntd[0] == false) && (forall j  |0<= j<N0 :: (ShrSet[j] == false) )) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -597,9 +597,9 @@ requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
-requires (!((ExGntd[0] == false) && (Chan2_Cmd[p__Inv2] == GntE)))//3
+requires (!((Chan2_Cmd[p__Inv2] == GntE) && (ShrSet[p__Inv2] == false)))//3
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqE) && (CurPtr[0] == i) && (ExGntd[0] == false) && (forall j  |0<= j<N0 :: (ShrSet[j] == false) )) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -653,9 +653,9 @@ requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires ((Chan2_Cmd[i] == Empty) && (CurCmd[0] == ReqE) && (CurPtr[0] == i) && (ExGntd[0] == false) && (forall j  |0<= j<N0 :: (ShrSet[j] == false) )) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan2_Cmd
 modifies Chan2_Data
 modifies CurCmd
@@ -698,7 +698,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires (Chan2_Cmd[i] == GntS) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -736,7 +736,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires (Chan2_Cmd[i] == GntS) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -772,9 +772,9 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires (Chan2_Cmd[i] == GntS) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -813,7 +813,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
 //1
 requires (Chan2_Cmd[i] == GntE) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -851,7 +851,7 @@ requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
 //1
 requires (Chan2_Cmd[i] == GntE) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -887,9 +887,9 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i!=p__Inv0&&i!=p__Inv2
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//2
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//2
 requires (Chan2_Cmd[i] == GntE) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Cache_Data
 modifies Cache_State
 modifies Chan2_Cmd
@@ -923,10 +923,10 @@ requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]
 
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Chan1_Cmd[i] == Empty) && (Cache_State[i] == S)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan1_Cmd
 
 {
@@ -961,10 +961,10 @@ requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]
 requires 0<=i<N0
 requires 0<=d<N1
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires (Cache_State[i] == E) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies AuxData
 modifies Cache_Data
 
@@ -1005,10 +1005,10 @@ requires forall i,j::0<=i<MemData.Length&&0<=j<MemData.Length==>MemData[i]!=MemD
 requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[j]
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Chan3_Cmd[i] == InvAck) && (!(CurCmd[0] == Empty))) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan3_Cmd
 modifies Chan3_Data
 modifies ExGntd
@@ -1056,10 +1056,10 @@ requires forall i,j::0<=i<InvSet.Length&&0<=j<InvSet.Length==>InvSet[i]!=InvSet[
 requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[j]
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Chan1_Cmd[i] == ReqE) && (CurCmd[0] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan1_Cmd
 modifies CurCmd
 modifies CurPtr
@@ -1102,10 +1102,10 @@ requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]
 
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Chan1_Cmd[i] == Empty) && (Cache_State[i] == I)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan1_Cmd
 
 {
@@ -1134,10 +1134,10 @@ requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]
 
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Cache_State[i] == I) && (Chan1_Cmd[i] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan1_Cmd
 
 {
@@ -1176,10 +1176,10 @@ requires forall i,j::0<=i<InvSet.Length&&0<=j<InvSet.Length==>InvSet[i]!=InvSet[
 requires forall i,j::0<=i<ShrSet.Length&&0<=j<ShrSet.Length==>ShrSet[i]!=ShrSet[j]
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
-requires (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))//statement has nothing with prop--it guranttee itself
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))//statement has nothing with prop--it guranttee itself
 
 requires ((Chan1_Cmd[i] == ReqS) && (CurCmd[0] == Empty)) //guard condition
-ensures   (!((Chan2_Cmd[p__Inv2] == GntE) && (Chan2_Cmd[p__Inv0] == GntE)))
+ensures   (!((Chan2_Cmd[p__Inv0] == GntE) && (Chan2_Cmd[p__Inv2] == GntE)))
 modifies Chan1_Cmd
 modifies CurCmd
 modifies CurPtr

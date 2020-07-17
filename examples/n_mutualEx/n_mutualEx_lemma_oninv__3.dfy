@@ -25,7 +25,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv4
 //1
 requires (n[i] == I) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -52,7 +52,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv3
 //1
 requires (n[i] == I) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -77,9 +77,9 @@ requires forall i,j::0<=i<n.Length&&0<=j<n.Length==>n[i]!=n[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i!=p__Inv3&&i!=p__Inv4
-requires (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))//2
+requires (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))//2
 requires (n[i] == I) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -111,7 +111,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv4
 //1
 requires ((n[i] == T) && (x[0] == true)) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 
@@ -142,9 +142,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv3
-requires (!((x[0] == true) && (n[p__Inv4] == E)))//3
+requires (!((n[p__Inv4] == E) && (x[0] == true)))//3
 requires ((n[i] == T) && (x[0] == true)) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 
@@ -175,9 +175,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i!=p__Inv3&&i!=p__Inv4
-requires (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))//2
+requires (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))//2
 requires ((n[i] == T) && (x[0] == true)) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 
@@ -207,7 +207,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv4
 requires (!((n[p__Inv4] == C) && (n[p__Inv3] == C)))//3
 requires (n[i] == C) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -234,7 +234,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv3
 //1
 requires (n[i] == C) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -259,9 +259,9 @@ requires forall i,j::0<=i<n.Length&&0<=j<n.Length==>n[i]!=n[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i!=p__Inv3&&i!=p__Inv4
-requires (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))//2
+requires (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))//2
 requires (n[i] == C) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 
 {
@@ -293,7 +293,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv4
 //1
 requires (n[i] == E) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 
@@ -326,7 +326,7 @@ requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv3
 //1
 requires (n[i] == E) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 
@@ -357,9 +357,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i!=p__Inv3&&i!=p__Inv4
-requires (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))//2
+requires (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))//2
 requires (n[i] == E) //guard condition
-ensures   (!((n[p__Inv4] == E) && (n[p__Inv3] == C)))
+ensures   (!((n[p__Inv3] == C) && (n[p__Inv4] == E)))
 modifies n
 modifies x
 

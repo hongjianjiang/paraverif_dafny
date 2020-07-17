@@ -202,7 +202,7 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
-requires (!((Cache_State[p__Inv2] == E) && (Chan2_Cmd[p__Inv0] == GntS)))//3
+requires (!((Chan2_Cmd[p__Inv0] == GntS) && (Cache_State[p__Inv2] == E)))//3
 requires (Chan2_Cmd[i] == GntS) //guard condition
 ensures   (!((Cache_State[p__Inv2] == E) && (!(Cache_State[p__Inv0] == I))))
 modifies Cache_Data
@@ -279,7 +279,7 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv2
-requires (!((!(Cache_State[p__Inv0] == I)) && (Chan2_Cmd[p__Inv2] == GntE)))//3
+requires (!((Chan2_Cmd[p__Inv2] == GntE) && (!(Cache_State[p__Inv0] == I))))//3
 requires (Chan2_Cmd[i] == GntE) //guard condition
 ensures   (!((Cache_State[p__Inv2] == E) && (!(Cache_State[p__Inv0] == I))))
 modifies Cache_Data
@@ -317,7 +317,7 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires p__Inv0!=p__Inv2&&p__Inv2<N0&& p__Inv0<N0
 requires i==p__Inv0
-requires (!((Cache_State[p__Inv2] == E) && (Chan2_Cmd[p__Inv0] == GntE)))//3
+requires (!((Chan2_Cmd[p__Inv0] == GntE) && (Cache_State[p__Inv2] == E)))//3
 requires (Chan2_Cmd[i] == GntE) //guard condition
 ensures   (!((Cache_State[p__Inv2] == E) && (!(Cache_State[p__Inv0] == I))))
 modifies Cache_Data

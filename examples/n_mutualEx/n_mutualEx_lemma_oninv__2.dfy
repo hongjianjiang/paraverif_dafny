@@ -27,7 +27,7 @@ requires  p__Inv4<N0
 requires i==p__Inv4
 //1
 requires (n[i] == I) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 
 {
@@ -54,9 +54,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires  p__Inv4<N0
 requires i!=p__Inv4
-requires (!((x[0] == true) && (n[p__Inv4] == C)))//2
+requires (!((n[p__Inv4] == C) && (x[0] == true)))//2
 requires (n[i] == I) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 
 {
@@ -86,7 +86,7 @@ requires  p__Inv4<N0
 requires i==p__Inv4
 //1
 requires ((n[i] == T) && (x[0] == true)) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 modifies x
 
@@ -117,7 +117,7 @@ requires  p__Inv4<N0
 requires i!=p__Inv4
 //1
 requires ((n[i] == T) && (x[0] == true)) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 modifies x
 
@@ -149,7 +149,7 @@ requires  p__Inv4<N0
 requires i==p__Inv4
 //1
 requires (n[i] == C) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 
 {
@@ -176,9 +176,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires  p__Inv4<N0
 requires i!=p__Inv4
-requires (!((x[0] == true) && (n[p__Inv4] == C)))//2
+requires (!((n[p__Inv4] == C) && (x[0] == true)))//2
 requires (n[i] == C) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 
 {
@@ -208,7 +208,7 @@ requires  p__Inv4<N0
 requires i==p__Inv4
 //1
 requires (n[i] == E) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 modifies x
 
@@ -237,9 +237,9 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires  p__Inv4<N0
 requires i!=p__Inv4
-requires (!((n[i] == E) && (n[p__Inv4] == C)))//3
+requires (!((n[p__Inv4] == C) && (n[i] == E)))//3
 requires (n[i] == E) //guard condition
-ensures   (!((x[0] == true) && (n[p__Inv4] == C)))
+ensures   (!((n[p__Inv4] == C) && (x[0] == true)))
 modifies n
 modifies x
 

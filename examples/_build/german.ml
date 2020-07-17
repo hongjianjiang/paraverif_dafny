@@ -169,5 +169,6 @@ let () = run_with_cmdline (fun () ->
   let cinvs_with_varnames, relations = find protocol
     ~murphi:(In_channel.read_all "n_german.m")
   in
- let ()=print_endline(Dafny1.protocol_act' protocol cinvs_with_varnames relations) in
-())
+    let ()=print_endline(Dafny1.protocol_act' protocol cinvs_with_varnames relations) in
+()
+)

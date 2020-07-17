@@ -109,7 +109,7 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv4
-requires (!((x[0] == true) && (n[p__Inv3] == C)))//3
+requires (!((n[p__Inv3] == C) && (x[0] == true)))//3
 requires ((n[i] == T) && (x[0] == true)) //guard condition
 ensures   (!((n[p__Inv4] == C) && (n[p__Inv3] == C)))
 modifies n
@@ -142,7 +142,7 @@ requires forall i,j::0<=i<x.Length&&0<=j<x.Length==>x[i]!=x[j]
 requires 0<=i<N0
 requires p__Inv3!=p__Inv4&&p__Inv4<N0&& p__Inv3<N0
 requires i==p__Inv3
-requires (!((x[0] == true) && (n[p__Inv4] == C)))//3
+requires (!((n[p__Inv4] == C) && (x[0] == true)))//3
 requires ((n[i] == T) && (x[0] == true)) //guard condition
 ensures   (!((n[p__Inv4] == C) && (n[p__Inv3] == C)))
 modifies n

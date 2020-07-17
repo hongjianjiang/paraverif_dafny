@@ -77,6 +77,146 @@ modifies Cache_Data
   AuxData[0] := d;
 }
 
+method n_Storeinv__4_2(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>,
+N0:nat,i:nat,d:nat,N1:nat,
+p__Inv2:nat)
+requires N0>0
+requires N1>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires 0<=i<N0
+requires 0<=d<N1
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((Cache_State[i] == E) && (!(Cache_State[p__Inv2] == I))))//3
+requires (Cache_State[i] == E) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies AuxData
+modifies Cache_Data
+
+{
+  Cache_Data[i] := d;
+  AuxData[0] := d;
+}
+
+method n_Storeinv__4_3(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>,
+N0:nat,i:nat,d:nat,N1:nat,
+p__Inv2:nat)
+requires N0>0
+requires N1>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires 0<=i<N0
+requires 0<=d<N1
+requires  p__Inv2<N0
+requires i==p__Inv2
+//1
+requires (Cache_State[i] == E) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies AuxData
+modifies Cache_Data
+
+{
+  Cache_Data[i] := d;
+  AuxData[0] := d;
+}
+
+method n_Storeinv__4_4(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>,
+N0:nat,i:nat,d:nat,N1:nat,
+p__Inv2:nat)
+requires N0>0
+requires N1>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires 0<=i<N0
+requires 0<=d<N1
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((Cache_State[i] == E) && (!(Cache_State[p__Inv2] == I))))//3
+requires (Cache_State[i] == E) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies AuxData
+modifies Cache_Data
+
+{
+  Cache_Data[i] := d;
+  AuxData[0] := d;
+}
+
+method n_Storeinv__4_5(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>,
+N0:nat,i:nat,d:nat,N1:nat,
+p__Inv2:nat)
+requires N0>0
+requires N1>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires 0<=i<N0
+requires 0<=d<N1
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((Cache_State[i] == E) && (!(Cache_State[p__Inv2] == I))))//3
+requires (Cache_State[i] == E) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies AuxData
+modifies Cache_Data
+
+{
+  Cache_Data[i] := d;
+  AuxData[0] := d;
+}
+
 
 method n_SendInvAckinv__4_0(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan3_Cmd:array<MSG_CMD>, Chan3_Data:array<DATA>,
 N0:nat,i:nat,
@@ -170,6 +310,52 @@ modifies Chan3_Data
   Cache_State[i] := I;
 }
 
+method n_SendInvAckinv__4_2(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan3_Cmd:array<MSG_CMD>, Chan3_Data:array<DATA>,
+N0:nat,i:nat,
+p__Inv2:nat)
+requires N0>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires Chan2_Cmd.Length==N0
+requires Chan3_Cmd.Length==N0
+requires Chan3_Data.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]!=Chan2_Cmd[j]
+requires forall i,j::0<=i<Chan3_Cmd.Length&&0<=j<Chan3_Cmd.Length==>Chan3_Cmd[i]!=Chan3_Cmd[j]
+requires forall i,j::0<=i<Chan3_Data.Length&&0<=j<Chan3_Data.Length==>Chan3_Data[i]!=Chan3_Data[j]
+requires 0<=i<N0
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))//2
+requires ((Chan2_Cmd[i] == Inv) && (Chan3_Cmd[i] == Empty)) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies Cache_Data
+modifies Cache_State
+modifies Chan2_Cmd
+modifies Chan3_Cmd
+modifies Chan3_Data
+
+{
+  Chan2_Cmd[i] := Empty;
+  Chan3_Cmd[i] := InvAck;
+  if (Cache_State[i] == E) {
+    Chan3_Data[i] := Cache_Data[i];
+  }
+  Cache_State[i] := I;
+}
+
 
 method n_RecvGntSinv__4_0(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan2_Data:array<DATA>,
 N0:nat,i:nat,
@@ -197,7 +383,7 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires  p__Inv2<N0
 requires i==p__Inv2
-requires (!((!(Chan2_Data[p__Inv2] == AuxData[0])) && (Chan2_Cmd[p__Inv2] == GntS)))//3
+requires (!((Chan2_Cmd[p__Inv2] == GntS) && (!(Chan2_Data[p__Inv2] == AuxData[0]))))//3
 requires (Chan2_Cmd[i] == GntS) //guard condition
 ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
 modifies Cache_Data
@@ -212,6 +398,46 @@ modifies Chan2_Data
 }
 
 method n_RecvGntSinv__4_1(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan2_Data:array<DATA>,
+N0:nat,i:nat,
+p__Inv2:nat)
+requires N0>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires Chan2_Cmd.Length==N0
+requires Chan2_Data.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]!=Chan2_Cmd[j]
+requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data[i]!=Chan2_Data[j]
+requires 0<=i<N0
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))//2
+requires (Chan2_Cmd[i] == GntS) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies Cache_Data
+modifies Cache_State
+modifies Chan2_Cmd
+modifies Chan2_Data
+
+{
+  Cache_State[i] := S;
+  Cache_Data[i] := Chan2_Data[i];
+  Chan2_Cmd[i] := Empty;
+}
+
+method n_RecvGntSinv__4_2(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan2_Data:array<DATA>,
 N0:nat,i:nat,
 p__Inv2:nat)
 requires N0>0
@@ -278,7 +504,7 @@ requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data
 requires 0<=i<N0
 requires  p__Inv2<N0
 requires i==p__Inv2
-requires (!((!(Chan2_Data[p__Inv2] == AuxData[0])) && (Chan2_Cmd[p__Inv2] == GntE)))//3
+requires (!((Chan2_Cmd[p__Inv2] == GntE) && (!(Chan2_Data[p__Inv2] == AuxData[0]))))//3
 requires (Chan2_Cmd[i] == GntE) //guard condition
 ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
 modifies Cache_Data
@@ -293,6 +519,46 @@ modifies Chan2_Data
 }
 
 method n_RecvGntEinv__4_1(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan2_Data:array<DATA>,
+N0:nat,i:nat,
+p__Inv2:nat)
+requires N0>0
+
+requires AuxData.Length==N0
+
+
+requires Cache_Data.Length==N0
+
+
+requires Cache_State.Length==N0
+requires Chan2_Cmd.Length==N0
+requires Chan2_Data.Length==N0
+requires forall i,j::0<=i<AuxData.Length&&0<=j<AuxData.Length==>AuxData[i]!=AuxData[j]
+
+
+requires forall i,j::0<=i<Cache_Data.Length&&0<=j<Cache_Data.Length==>Cache_Data[i]!=Cache_Data[j]
+
+
+requires forall i,j::0<=i<Cache_State.Length&&0<=j<Cache_State.Length==>Cache_State[i]!=Cache_State[j]
+requires forall i,j::0<=i<Chan2_Cmd.Length&&0<=j<Chan2_Cmd.Length==>Chan2_Cmd[i]!=Chan2_Cmd[j]
+requires forall i,j::0<=i<Chan2_Data.Length&&0<=j<Chan2_Data.Length==>Chan2_Data[i]!=Chan2_Data[j]
+requires 0<=i<N0
+requires  p__Inv2<N0
+requires i!=p__Inv2
+requires (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))//2
+requires (Chan2_Cmd[i] == GntE) //guard condition
+ensures   (!((!(Cache_State[p__Inv2] == I)) && (!(Cache_Data[p__Inv2] == AuxData[0]))))
+modifies Cache_Data
+modifies Cache_State
+modifies Chan2_Cmd
+modifies Chan2_Data
+
+{
+  Cache_State[i] := E;
+  Cache_Data[i] := Chan2_Data[i];
+  Chan2_Cmd[i] := Empty;
+}
+
+method n_RecvGntEinv__4_2(AuxData:array<DATA>,   Cache_Data:array<DATA>,   Cache_State:array<CACHE_STATE>, Chan2_Cmd:array<MSG_CMD>, Chan2_Data:array<DATA>,
 N0:nat,i:nat,
 p__Inv2:nat)
 requires N0>0

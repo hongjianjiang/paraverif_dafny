@@ -407,29 +407,15 @@ let minify_inv_desc inv =
   let rec wrapper necessary parts =
     match parts with
     | [] ->
-    	(*let f=if (!symmetry_method_switch) then 
-    			    form2AllSymForm ~f:(neg (andList necessary)) ~types:(!type_defs)
-    			  else (neg (andList necessary)) in
-      if Smv.is_inv (ToStr.Smv.form_act f) then
-        necessary
-      else begin raise Empty_exception end  *)
       let fs=if (!symmetry_method_switch) then 
     			    form2AllSymForm ~f:(neg (andList necessary)) ~types:(!type_defs)
     			  else [(neg (andList necessary))] in 
-
 			let ()=print_endline "forall sym formulas" in
 			let  tmp=List.map ~f:(fun f->print_endline (ToStr.Smv.form_act f)) fs in
     	if 	(trySimpleSymList 	fs) then   necessary 
       else begin let tmp=List.map ~f:(fun x->print_endline (ToStr.Smv.form_act ~lower:false x)) necessary in raise Empty_exception end
     | p::parts' ->
-    	(*let f=if (!symmetry_method_switch) then 
-    			    form2AllSymForm ~f:(neg (andList (necessary@parts'))) ~types:(!type_defs)
-    			  else (neg (andList (necessary@parts'))) in
-      if Smv.is_inv (ToStr.Smv.form_act f ) then
-        wrapper necessary parts'
-      else begin
-        wrapper (p::necessary) parts' end*)
-        
+
       let fs=if (!symmetry_method_switch) then 
                form2AllSymForm ~f:(neg (andList (necessary@parts'))) ~types:(!type_defs)
     			   else [(neg (andList (necessary@parts')))] in
@@ -438,16 +424,16 @@ let minify_inv_desc inv =
   in
   let ls = match inv with | AndList(fl) -> fl | _ -> [inv] in
 	let tmp1=Prt.info (sprintf "to be minified: %s" (ToStr.Smv.form_act inv)) in
-	let tmp=List.map ~f:(fun x->ToStr.Smv.form_act ~lower:false x) ls in 
+	let tmp=List.map ~f:(fun x->(*let () = print_endline("Original:"^ToStr.Smv.form_act ~lower:false x) in*) ToStr.Smv.form_act ~lower:false x) ls in 
   let t1=List.map tmp ~f:(fun x->Hashtbl.replace record_table ~key:(get_rname_of_crname x) ~data:x) in 
   let l2=Hashtbl.data record_table in 
-  let t2=List.map ~f:(fun x->print_endline (sprintf "%s" x)) l2 in 
-  (* let temp2=List.map tmp ~f:(fun x->if List.exists temp ~f:(fun y->(get_rname_of_crname y)<> (get_rname_of_crname x)) then temp@[x]) in  *)
-  (* let test = List.map ~f:(fun x->print_endline(sprintf "%s" (String.concat ~sep:"," x))) temp2 in  *)
+  (* let t2=List.map ~f:(fun x->print_endline (sprintf "rmove duplicate:%s" x)) l2 in *)
+  let () = Hashtbl.clear record_table in 
+  
+
   let result=andList (wrapper [] ls) in
 	let ()=print_endline ("result="^ToStr.Smv.form_act (result)) in
 	result
-
 
 (* Minify inv by add useful components gradually *)
 let minify_inv_inc inv =
@@ -541,7 +527,7 @@ module Choose = struct
       tautology inv
     else begin
       try
-        let inv = minify_inv_inc inv in
+        let inv = minify_inv_desc inv in
         (* Because invs are in form of negation, so inv -> old means neg old -> neg inv *)
         let implied_by_old = InvLib.any_can_be_implied_by inv ~symIndex:(!symmetry_index_switch) in
         match implied_by_old with
@@ -843,7 +829,7 @@ let tabular_expans (Rule(_name, _, form, _), crule, _, assigns) ~cinv =
     |> List.map ~f:(fun (g, o) -> g, simplify o)
     |> List.filter ~f:(fun (g, _) -> is_satisfiable g)
   in
-  Prt.info (sprintf "rule: %s; inv: %s;pds:%s" _name (ToStr.Smv.form_act inv_inst) (String.concat ~sep:"," (List.map ~f:ToStr.Debug.paramdef_act pds)));
+  Prt.info (sprintf "rule: %s; inv: %s;"_name (ToStr.Smv.form_act inv_inst) (*(String.concat ~sep:"," (List.map ~f:ToStr.Debug.paramdef_act pds)*));
   let rec deal_with_case obligations relations =
     match obligations with
     | [] -> relations
@@ -886,7 +872,9 @@ let compute_rule_inst_names rname_paraminfo_pairs prop_pds =
       end;
       [rname]
     | _ ->
-      SemiPerm.gen_paramfixes prop_pds rpds
+      (* SemiPerm.gen_paramfixes prop_pds rpds *)
+  	   cart_product_with_paramfix rpds (!type_defs)  
+
       |> List.map ~f:(fun pfs ->
         let inst_name = get_rule_inst_name rname pfs in
         begin

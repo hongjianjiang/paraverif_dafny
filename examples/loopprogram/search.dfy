@@ -14,6 +14,14 @@ requires a!=null && a.Length>0
         i:=i+1;
     }
 } 
+function max(a:int,b:int):nat
+{
+    if a>b then a else b
+}
+function maxarray(a:array)
+{
+    maxarray(a)=max(a)
+}
 
 method max_one_way(a:array<int>,t:array<int>,t1:array<int>)returns (r:int)
 requires a!=null && a.Length>0
