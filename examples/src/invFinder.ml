@@ -90,7 +90,6 @@ let symmetry_index_switch=ref true
 
 let get_rname_of_crname crname =
   Regex.rewrite_exn (Regex.of_string "\\[.+?\\]") ~template:"" crname
-let ()= print_endline(get_rname_of_crname "ShrSet[1] = FALSE")
 
 
 let rec cache_vars_of_rules rs =
