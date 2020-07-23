@@ -421,7 +421,10 @@ let minify_inv_desc inv =
     	if 	trySimpleSymList 	fs then  let ()=print_endline ("unnecessary p="^(ToStr.Smv.form_act p)) in wrapper necessary parts'
       else begin wrapper (p::necessary) parts' end		   
   in
-  let ls = match inv with | AndList(fl) -> fl | _ -> [inv] in
+  let ls = match inv with | AndList(fl) -> fl | _ -> [inv] 
+  |> List.filter ~f:(fun x -> match x with | Miracle -> false | _ -> true)
+  |> stupid_dedup_list ~f:(fun x y -> symmetry_form x y = 0)
+in
 	let tmp1=Prt.info (sprintf "to be minified: %s" (ToStr.Smv.form_act inv)) in
 	let tmp=List.map ~f:(fun x->(*let () = print_endline("Original:"^ToStr.Smv.form_act ~lower:false x) in*) ToStr.Smv.form_act ~lower:false x) ls in 
   let t1=List.map tmp ~f:(fun x->Hashtbl.replace record_table ~key:(get_rname_of_crname x) ~data:x) in 

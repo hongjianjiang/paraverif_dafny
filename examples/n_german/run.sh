@@ -1,66 +1,66 @@
 #!/bin/bash
 shopt -s expand_aliases
 source ~/.bashrc
-Start=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
-dafny n_german_lemma_oninv__1.dfy
-dafny n_german_lemma_oninv__2.dfy
-dafny n_german_lemma_oninv__3.dfy
-dafny n_german_lemma_oninv__4.dfy
-dafny n_german_lemma_oninv__5.dfy
-dafny n_german_lemma_oninv__6.dfy
-dafny n_german_lemma_oninv__7.dfy
-dafny n_german_lemma_oninv__8.dfy
-dafny n_german_lemma_oninv__9.dfy
-dafny n_german_lemma_oninv__10.dfy
-dafny n_german_lemma_oninv__11.dfy
-dafny n_german_lemma_oninv__12.dfy
-dafny n_german_lemma_oninv__13.dfy
-dafny n_german_lemma_oninv__14.dfy
-dafny n_german_lemma_oninv__15.dfy
-dafny n_german_lemma_oninv__16.dfy
-dafny n_german_lemma_oninv__17.dfy
-dafny n_german_lemma_oninv__18.dfy
-dafny n_german_lemma_oninv__19.dfy
-dafny n_german_lemma_oninv__20.dfy
-dafny n_german_lemma_oninv__21.dfy
-dafny n_german_lemma_oninv__22.dfy
-dafny n_german_lemma_oninv__23.dfy
-dafny n_german_lemma_oninv__24.dfy
-dafny n_german_lemma_oninv__25.dfy
-dafny n_german_lemma_oninv__26.dfy
-dafny n_german_lemma_oninv__27.dfy
-dafny n_german_lemma_oninv__28.dfy
-dafny n_german_lemma_oninv__29.dfy
-dafny n_german_lemma_oninv__30.dfy
-dafny n_german_lemma_oninv__31.dfy
-dafny n_german_lemma_oninv__32.dfy
-dafny n_german_lemma_oninv__33.dfy
-dafny n_german_lemma_oninv__34.dfy
-dafny n_german_lemma_oninv__35.dfy
-dafny n_german_lemma_oninv__36.dfy
-dafny n_german_lemma_oninv__37.dfy
-dafny n_german_lemma_oninv__38.dfy
-dafny n_german_lemma_oninv__39.dfy
-dafny n_german_lemma_oninv__40.dfy
-dafny n_german_lemma_oninv__41.dfy
-dafny n_german_lemma_oninv__42.dfy
-dafny n_german_lemma_oninv__43.dfy
-dafny n_german_lemma_oninv__44.dfy
-dafny n_german_lemma_oninv__45.dfy
-dafny n_german_lemma_oninv__46.dfy
-dafny n_german_lemma_oninv__47.dfy
-dafny n_german_lemma_oninv__48.dfy
-dafny n_german_lemma_oninv__49.dfy
-dafny n_german_lemma_oninv__50.dfy
-dafny n_german_lemma_oninv__51.dfy
-dafny n_german_lemma_oninv__52.dfy
-dafny n_german_lemma_oninv__53.dfy
-dafny n_german_lemma_oninv__54.dfy
-dafny n_german_lemma_oninv__55.dfy
-dafny n_german_lemma_oninv__56.dfy
-dafny n_german_lemma_oninv__57.dfy
-dafny n_german_lemma_oninv__58.dfy
-End=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
-val=`expr $End - $Start`
-printf "%s %.2f sec\n" 运行时间为： $val
-
+isabelle build -v -d . -b paraTheory_Session
+isabelle build -v -d . -b n_german_base_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__1_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__2_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__3_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__4_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__5_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__6_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__7_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__8_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__9_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__10_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__11_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__12_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__13_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__14_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__15_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__16_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__17_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__18_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__19_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__20_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__21_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__22_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__23_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__24_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__25_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__26_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__27_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__28_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__29_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__30_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__31_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__32_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__33_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__34_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__35_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__36_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__37_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__38_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__39_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__40_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__41_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__42_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__43_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__44_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__45_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__46_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__47_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__48_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__49_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__50_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__51_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__52_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__53_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__54_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__55_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__56_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__57_Session
+isabelle build -v -d . -b n_german_lemma_on_inv__58_Session
+isabelle build -v -d . -b n_german_lemma_invs_on_rules_Session
+isabelle build -v -d . -b n_german_invs_on_inis_Session
+isabelle build -v -d . -b n_german_Session

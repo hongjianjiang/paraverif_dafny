@@ -13,6 +13,21 @@ open Core.Std
     @param types type definitions
     @param vardefs variable definitions
 *)
+let global name = arr [(name, [])]
+let _False = boolc false
+
+(** Record definition *)
+let record_def name paramdefs vardefs =
+  List.map vardefs ~f:(fun vardef ->
+    let Arrdef(ls, t) = vardef in
+    arrdef ((name, paramdefs)::ls) t
+  )
+
+(** Record *)
+let record vars =
+  arr (List.concat (List.map vars ~f:(fun (Arr(ls)) -> ls)))
+
+
 let is_tautology ?(quiet=true) form =
  (* let ()=printf "\n---%s---\n" (ToStr.Debug.form_act form) in *)
   not (Smt.is_satisfiable ~quiet (ToStr.Smt2.form_of (neg form)))
@@ -391,7 +406,10 @@ let symmetry_form f1 f2 =
   match can_imply f1 f2 ~symIndex:true, can_imply f2 f1 ~symIndex:true with
   | Some(_), Some(_) -> 0
   | _ -> 1 (* String.compare (ToStr.Smv.form_act f1) (ToStr.Smv.form_act f2)*)
-  
+  let () =   let f1 = (eqn (var (arr [("Shret", [paramfix  "i" "i" (intc 1)])])) (Const _False)) in let f2 = (eqn (var (arr [("Shret", [paramfix  "i" "i" (intc 2)])])) (Const _False)) in  
+  Prt.warning (Int.to_string (symmetry_form f1 f2))
+  (* let() =let f1 = (eqn (var (arr [("ShrSet", [paramfix "i" "i" (const (Intc 1))])])) (const (boolc false))) in 
+  let f2 = (eqn (var (arr [("ShrSet", [paramref "i" "i" (Const (intc 2))])]) (const (boolc false)))) in  print_endline(Int.to_string symmetry_form f1 f2) *)
 (*input: a concrete formula: f; typedefs: ~types；
 generate all possible substitutions sub in types
 for each sub: apply_form f sub and add it into fs 

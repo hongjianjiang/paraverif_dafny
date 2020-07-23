@@ -1,1 +1,1 @@
-formula.ml: Core Generalize List Map Paramecium Prt Smt String ToStr Utils VarNames
+formula.ml: Core Generalize Int List Map Paramecium Prt Smt String ToStr Utils VarNames

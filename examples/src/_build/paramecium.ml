@@ -319,7 +319,6 @@ let name_match params defs =
   else
     false
 
-let () = print_endline(Bool.to_string (name_match  ([paramref "n1";paramref "n3"]) ([paramdef "n1" "n2" ; paramdef "n3" "n4"])))
 (** Apply rule with param *)
 let apply_rule r ~p =
   let Rule(n, paramdefs, f, s) = r in
