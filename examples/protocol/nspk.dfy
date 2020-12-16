@@ -1,7 +1,88 @@
 type role = string
 datatype message = Nil | Aenc(aencMsg:message,aencKey:message) | Senc(m1:message,m2:message) | K(r1:role,r2:role) | Pk(r:role) | Sk(r:role) | Str(r:role) | Var(n:role) | Concat(array<message>)
 type channel = array<message>
-
+method aencrtpy(aencMsg:message,aencKey:message,is:array<message>)
+    requires is.Length >0
+    requires !(forall i:int ::0<=i<is.Length ==> is[i]!=Nil)
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=aencMsg)
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=aencKey)
+    requires (forall i:int ::0<=i<is.Length ==> is[i]!=Aenc(aencMsg,aencKey))
+    modifies is
+    {
+        var aencMsg1:=Aenc(aencMsg,aencKey);
+        var i:=0;
+        assert (forall i:int ::0<=i<is.Length ==> is[i]!=aencMsg1);
+        while(i<is.Length)
+        {
+            if(is[i]==Nil)
+            {
+                is[i]:=aencMsg1;
+            }
+            i:=i+1;
+        }
+    }
+method sencrtpy(sencMsg:message,sencKey:message,is:array<message>)
+    requires is.Length >0
+    requires !(forall i:int ::0<=i<is.Length ==> is[i]!=Nil)
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=sencMsg)
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=sencKey)
+    requires (forall i:int ::0<=i<is.Length ==> is[i]!=Senc(sencMsg,sencKey))
+    modifies is
+    {
+        var sencMsg1:=Senc(sencMsg,sencKey);
+        var i:=0;
+        while(i<is.Length)
+        {
+            if(is[i]==Nil)
+            {
+                is[i]:=sencMsg1;
+            }
+            i:=i+1;
+        }
+    }
+method deconcat(concat:array<message>,is:array<message>)
+    requires concat != is 
+    requires concat.Length > 0
+    requires !(forall i,j:int :: 0<=i<concat.Length && 0<=j<is.Length ==> concat[i]!=is[j])
+    modifies is
+{
+    var i:=0 ;
+    while(i<concat.Length)
+    {
+        var j:=0;
+        while(j<is.Length)
+        {
+            if(is[j]==Nil)
+            {
+                is[j]:=concat[i];
+                break;
+            }
+            j:=j+1;
+        }
+        i:=i+1;
+    }
+}
+method constructConcat(m1:message,m2:message,is:array<message>)
+    requires is.Length >0 
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=m1)
+    requires !(forall i:int :: 0<=i<is.Length ==> is[i]!=m2)
+    modifies is
+{ 
+    var ms:=new message[2];
+    ms[0]:=m1;
+    ms[1]:=m2;
+    var concatmsg :=Concat(ms);
+    var i:=0;
+    while(i<is.Length)
+    {
+        if(is[i]==Nil)
+        {
+            is[i]:=concatmsg;
+            break;
+        }
+        i:=i+1;
+    }
+}
 method ReceiveMsgFromChannel(c:channel,m1:message,is:array<message>) returns (m:message)//take message from channel
     requires c.Length > 0 
     requires m1!=Nil  
