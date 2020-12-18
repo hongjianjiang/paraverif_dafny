@@ -8,7 +8,7 @@ method test (a:array<int>,n:int)
 {
     var i:=n;
     while( i<a.Length)
-    forall i:int :: 0<=i<a.Length ==> a[i] > 0 
+    invariant forall i:int :: 0<=i<a.Length ==> a[i] > 0 
     {
         if(a[i]==0){
             a[i]:=1;
