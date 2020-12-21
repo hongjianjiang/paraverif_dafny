@@ -199,4 +199,8 @@ function method  destruct(m:message):message//Destruct the message into submessa
  }
 
 
- 
+ method Main()
+ {
+     var intruderKnows :={1};
+
+ }
