@@ -1541,8 +1541,8 @@ qed"
 let file_pub name types_str  () =
   let pub_str = sprintf
 "//(*  Title:      HOL/Auth/%s.dfy
- //   Author:     Yongjian Li and Kaiqiang Duan, State Key Lab of Computer Science, Institute of Software, Chinese Academy of Sciences
- //   Copyright    2016 State Key Lab of Computer Science, Institute of Software, Chinese Academy of Sciences
+ //   Author:    Jiang Hongjian, ShangHai Key Laboratory of Trustworthy Computing, East China Normal University
+ //   Copyright    2020 ShangHai Key Laboratory of Trustworthy Computing, East China Normal University
 //*)
 
 //header{*The %s Protocol Case Study*} 

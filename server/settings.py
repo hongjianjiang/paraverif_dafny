@@ -12,14 +12,14 @@ MU_CHECK_TIMEOUT = 600
 MU_CHECK_MEMORY = 1024
 
 # path to NuSMV
-SMV_PATH = '/Users/sword/Documents/Paraverif/NuSMV-2.6.0/NuSMV/build/bin/NuSMV'
-MU_PATH = '/Users/sword/Documents/Paraverif/cmurphi5.4.9.1/src/mu'
-MU_INCLUDE = '/Users/sword/Documents/Paraverif/cmurphi5.4.9.1/include'
+SMV_PATH = '/Users/sword/Documents/NuSMV-2.6.0/NuSMV/build/bin/NuSMV'
+MU_PATH = '/Users/sword/Downloads/cmurphi5.4.9.1/src/mu'
+MU_INCLUDE = '/Users/sword/Downloads/cmurphi5.4.9.1/include'
 GXX_PATH = '/usr/bin/g++'
 
 # path for storing smv files
-SMV_FILE_DIR = '/Users/sword/Documents/Paraverif/NuSMV-2.6.0/tmp'
-MU_FILE_DIR = '/Users/sword/Documents/Paraverif/cmurphi5.4.9.1/tmp'
+SMV_FILE_DIR = '/tmp/NuSMV/'
+MU_FILE_DIR = '/tmp/cmurphi/'
 
 
 

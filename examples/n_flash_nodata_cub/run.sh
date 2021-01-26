@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s expand_aliases
-source ~/.bashrc
-Start=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
+startTime=`date +%Y%m%d-%H:%M:%S`
+startTime_s=`date +%s`
 dafny n_flash_nodata_cub_lemma_oninv__1.dfy
 dafny n_flash_nodata_cub_lemma_oninv__2.dfy
 dafny n_flash_nodata_cub_lemma_oninv__3.dfy
@@ -154,7 +154,9 @@ dafny n_flash_nodata_cub_lemma_oninv__149.dfy
 dafny n_flash_nodata_cub_lemma_oninv__150.dfy
 dafny n_flash_nodata_cub_lemma_oninv__151.dfy
 dafny n_flash_nodata_cub_lemma_oninv__152.dfy
-End=`date +%F | sed 's/-//g'``date +%T | sed 's/://g'`
-val=`expr $End - $Start`
-printf "%s %.2f sec\n" 运行时间为： $val
+endTime=`date +%Y%m%d-%H:%M:%S`
+endTime_s=`date +%s`
 
+sumTime=$[ $endTime_s - $startTime_s ]
+
+echo "$startTime ---> $endTime" "Total:$sumTime seconds"
