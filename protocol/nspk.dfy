@@ -121,7 +121,7 @@ method BobSendMsg_1(c:channel,intruKnows:set<message>)//Bob sends the first mess
  method AliceGetMsg_1(c:array<message>,intruKnows:set<message>,flag:bool) returns (m:message)//Alice receives the first message from channel
     requires c.Length > 0 
     requires flag == false
-    requires nverify(c[0])
+    requires rverify(c[0])
     requires Var("Na") !in intruKnows
     ensures Var("Na") !in intruKnows
     ensures c[0]==Nil
@@ -133,7 +133,7 @@ method BobSendMsg_1(c:channel,intruKnows:set<message>)//Bob sends the first mess
  }
   method BobGetMsg_1(c:array<message>,intruKnows:set<message>) returns (m:message)//Bob receives the first message from channel
     requires c.Length > 0 
-    requires nverify(c[0])
+    requires rverify(c[0])
     requires Var("Na") !in intruKnows
     ensures Var("Na") !in intruKnows
     ensures c[0]==Nil
@@ -145,7 +145,7 @@ method BobSendMsg_1(c:channel,intruKnows:set<message>)//Bob sends the first mess
  }
   method BobGetMsg_2(c:array<message>,intruKnows:set<message>) returns (m:message)//Bob receives the third message from channel
     requires c.Length > 0 
-    requires nverify(c[0])
+    requires rverify(c[0])
     requires Var("Na") !in intruKnows
     ensures Var("Na") !in intruKnows
     ensures c[0]==Nil
@@ -167,7 +167,7 @@ method IntruderGetMsg(c:channel,intruKnows:set<message>,i:int) returns (newIntru
     c[0]:=Nil;
 }
  
-predicate  nverify(m:message)//Alice or Bob verify Message received
+predicate  rverify(m:message)//Alice or Bob verify Message received
 {
     match m
     case Nil => false
@@ -180,7 +180,7 @@ predicate  nverify(m:message)//Alice or Bob verify Message received
     case K(r1,r2)=>false
     case Pair(m1,m2) => false
  }
-  predicate  iverify(m:message)//Intruder verify message received
+predicate  iverify(m:message)//Intruder verify message received
 {
     match m
     case Nil => false
