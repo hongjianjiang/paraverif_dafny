@@ -5,7 +5,7 @@ $ cd server/
 
 $ python server.py
 
-另开一个终端    
+new open a terminition   
 
 $ cd example 
 
