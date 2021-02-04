@@ -13,7 +13,7 @@ modifies n
 modifies k
 modifies m
 {
-    // c[0]:=c[0]+k[0];
+    c[0]:=c[0]+k[0];
     k[0]:=k[0]+m[0];
     m[0]:=m[0]+6;
     n[0]:=n[0]+1;
